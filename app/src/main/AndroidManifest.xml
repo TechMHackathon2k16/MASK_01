@@ -12,7 +12,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.Holo.Light">
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name"
@@ -26,19 +26,18 @@
         <activity android:name=".DecisionActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".UserLoginActivity"
+            android:name="activity.UserLoginActivity"
             android:label="@string/title_activity_user_login" />
         <activity
-            android:name=".EmployeeLoginActivity"
+            android:name="activity.EmployeeLoginActivity"
             android:label="@string/title_activity_employee_login" />
-        <activity android:name=".activity.moderator.ModAssignFragment" />
         <activity android:name=".activity.ComplaintDetailActivity" />
         <activity android:name=".activity.moderator.AssignComplaintActivity" />
         <activity android:name=".activity.user.RegisterComplaintActivity" />
         <activity android:name=".activity.user.ComplaintAddressActivity" />
         <activity android:name=".activity.user.EmployeeDetailActivity" />
         <activity android:name=".activity.UpdateStatusActivity" />
-        <activity android:name=".activity.user.UserComplaintActivity" />
+        <activity android:name=".activity.user.UserComplaintActivity"/>
 
         <service
             android:name=".services.MainService"

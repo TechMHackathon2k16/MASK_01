@@ -11,14 +11,6 @@ import android.widget.ListView;
 
 import com.mask.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link PendingComplaintFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link PendingComplaintFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PendingComplaintFragment extends Fragment {
 
     ListView pendingComplaint;
