@@ -37,7 +37,35 @@ public class Constants {
 
     // Extra for WebService Result
 
-    public static final String KUSER = "user";
-    public static final String KNAME = "name";
+    public static final String RUSER = "user";
+    public static final String RSUCCESS = "success";
+
+    public static final String RCOMPLAINTID = "complaint_id"";
+    public static final String RUSERID = "user_id";
+    public static final String RCOMPLAINTDETAILS = "complaint_details";
+    public static final String RDEPTTID = "dept_id";
+    public static final String RCOMPLAINTSTATUS = "complaint_status":
+    public static final String RREADBYUSER = "readby_user";
+    public static final String RREADBYMODERATOR = "readby_moderator";
+    public static final String RREADBYEMP = "readby_emp";
+    public static final String RCOMAPLINTDATE = "complaint_date";
+    public static final String RCOMPLAINTESTDATE = "complaint_est_date";
+    public static final String RCOMAPLINTRESDATE = "complaint_res_date";
+    public static final String RCOMPLAINTADD = "complaint_add";
+    public static final String RASSIGNEMPID = "assign_emp_id";
+
+    public static final String REMPID = "emp_id";
+    public static final String RDEPTID = "dept_id";
+    public static final String REMPNAME = "emp_name";
+    public static final String REMPCONTACT = "emp_contact";
+
+    public static final String RUSERID = "user_id";
+    public static final String RUSERNAME = "user_name";
+    public static final String RUSERCONTACT = "user_contact";
+    public static final String RUSERADDRESS = "user_add";
+
+
+
+
 
 }

@@ -15,6 +15,12 @@ public class ComplaintModel {
     int readByUser;
     int readByModartor;
     int readByEmployee;
+    Date complaintDate;
+    Date complaintEstDate;
+    Date complaintResDate;
+    String complaintAddress;
+    int assignEmpId;
+
 
     public int getComplaintId() {
         return complaintId;
@@ -120,10 +126,5 @@ public class ComplaintModel {
         this.assignEmpId = assignEmpId;
     }
 
-    Date complaintDate;
-    Date complaintEstDate;
-    Date complaintResDate;
-    String complaintAddress;
-    int assignEmpId;
 
 }

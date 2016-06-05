@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class WebServices {
     WebServiceManager webServiceManager;
+
     public WebServices(Context context){
         webServiceManager = new WebServiceManager(context);
     }
