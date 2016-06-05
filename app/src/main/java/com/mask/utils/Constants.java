@@ -54,11 +54,11 @@ public class Constants {
     public static final String RUSER = "user";
     public static final String RSUCCESS = "success";
 
-    public static final String RCOMPLAINTID = "complaint_id"";
+    public static final String RCOMPLAINTID = "complaint_id";
     public static final String RUSERID = "user_id";
     public static final String RCOMPLAINTDETAILS = "complaint_details";
     public static final String RDEPTTID = "dept_id";
-    public static final String RCOMPLAINTSTATUS = "complaint_status":
+    public static final String RCOMPLAINTSTATUS = "complaint_status";
     public static final String RREADBYUSER = "readby_user";
     public static final String RREADBYMODERATOR = "readby_moderator";
     public static final String RREADBYEMP = "readby_emp";
@@ -73,7 +73,6 @@ public class Constants {
     public static final String REMPNAME = "emp_name";
     public static final String REMPCONTACT = "emp_contact";
 
-    public static final String RUSERID = "user_id";
     public static final String RUSERNAME = "user_name";
     public static final String RUSERCONTACT = "user_contact";
     public static final String RUSERADDRESS = "user_add";
