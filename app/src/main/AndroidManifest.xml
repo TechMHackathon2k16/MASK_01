@@ -52,7 +52,12 @@
         <receiver
             android:name=".receivers.BootReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.employee.UpdateContact"
+            android:label="@string/title_activity_update_contact"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

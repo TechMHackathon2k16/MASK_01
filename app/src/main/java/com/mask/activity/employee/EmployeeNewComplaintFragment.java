@@ -7,11 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.mask.R;
 
 public class EmployeeNewComplaintFragment extends Fragment {
 
+    ListView newComplaint;
     public EmployeeNewComplaintFragment() {
         // Required empty public constructor
     }
@@ -20,7 +22,9 @@ public class EmployeeNewComplaintFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_employee_new_complaint, container, false);
+        View view =  inflater.inflate(R.layout.fragment_employee_new_complaint, container, false);
+        newComplaint = (ListView)view.findViewById(R.id.listViewNewComplaint);
+        return  view;
     }
 
 }
