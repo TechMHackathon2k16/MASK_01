@@ -3,6 +3,8 @@ package com.mask.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.mask.R;
+
 public class UpdateStatusActivity extends AppCompatActivity {
 
     @Override
