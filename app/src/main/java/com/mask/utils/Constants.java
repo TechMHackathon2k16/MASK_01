@@ -8,6 +8,20 @@ public class Constants {
     /*Web Service Url */
     public static final String BASE_URL = "localhost/ComplaintResolutionSystem/complaint_resolution_system/";
 
+    /* User Types */
+
+    public static final int USER = 0;
+    public static final int MODERATOR = 1;
+    public static final int EMPLOYEE = 2;
+
+    /* Status Code */
+
+    public static final int NEW = 001;
+    public static final int AASIGNED = 101;
+    public static final int RESOLVING = 201;
+    public static final int RESOLVED = 301;
+    public static final int COMPLETED = 401;
+
     /* Complaint type */
 
     public static final int COMPLAINT_USER_PENDING = 0;
