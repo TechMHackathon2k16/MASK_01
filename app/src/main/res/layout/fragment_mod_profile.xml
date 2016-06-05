@@ -5,9 +5,51 @@
     tools:context="com.mask.activity.moderator.ModProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:id="@+id/txtviewMName"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aadhar Number"
+            android:id="@+id/txtViewAdhar"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/btnContact"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtViewAddress"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+    </LinearLayout>
 </FrameLayout>

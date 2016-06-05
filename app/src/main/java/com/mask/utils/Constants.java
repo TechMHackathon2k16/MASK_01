@@ -8,6 +8,20 @@ public class Constants {
     /*Web Service Url */
     public static final String BASE_URL = "localhost/ComplaintResolutionSystem/complaint_resolution_system/";
 
+    /* User Types */
+
+    public static final int USER = 0;
+    public static final int MODERATOR = 1;
+    public static final int EMPLOYEE = 2;
+
+    /* Status Code */
+
+    public static final int NEW = 001;
+    public static final int AASIGNED = 101;
+    public static final int RESOLVING = 201;
+    public static final int RESOLVED = 301;
+    public static final int COMPLETED = 401;
+
     /* Complaint type */
 
     public static final int COMPLAINT_USER_PENDING = 0;
@@ -40,11 +54,11 @@ public class Constants {
     public static final String RUSER = "user";
     public static final String RSUCCESS = "success";
 
-    public static final String RCOMPLAINTID = "complaint_id"";
+    public static final String RCOMPLAINTID = "complaint_id";
     public static final String RUSERID = "user_id";
     public static final String RCOMPLAINTDETAILS = "complaint_details";
     public static final String RDEPTTID = "dept_id";
-    public static final String RCOMPLAINTSTATUS = "complaint_status":
+    public static final String RCOMPLAINTSTATUS = "complaint_status";
     public static final String RREADBYUSER = "readby_user";
     public static final String RREADBYMODERATOR = "readby_moderator";
     public static final String RREADBYEMP = "readby_emp";
@@ -59,7 +73,6 @@ public class Constants {
     public static final String REMPNAME = "emp_name";
     public static final String REMPCONTACT = "emp_contact";
 
-    public static final String RUSERID = "user_id";
     public static final String RUSERNAME = "user_name";
     public static final String RUSERCONTACT = "user_contact";
     public static final String RUSERADDRESS = "user_add";

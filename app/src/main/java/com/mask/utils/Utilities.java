@@ -23,4 +23,20 @@ public class Utilities {
     public static void saveEmployeeInfo(EmployeeModel userModel) {
 
     }
+
+    public static String getStatusString(int status) {
+        switch(status) {
+            case Constants.NEW:
+                return "New";
+            case Constants.AASIGNED:
+                return "Assigned";
+            case Constants.RESOLVING:
+                return "Resolving";
+            case Constants.RESOLVED:
+                return "Resolved";
+            case Constants.COMPLETED:
+                return "Completed";
+        }
+        return null;
+    }
 }
