@@ -3,6 +3,7 @@ package com.mask.activity;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -16,9 +17,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.mask.HomeActivity;
 import com.mask.R;
+import com.mask.model.UserModel;
+import com.mask.network.WebServices;
+import com.mask.utils.Utilities;
 
 
 /**
@@ -26,8 +32,8 @@ import com.mask.R;
  */
 public class UserLoginActivity extends AppCompatActivity {
 
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
+    private AutoCompleteTextView txtFieldAadhaar;
+    private EditText txtFieldName;
     private View mProgressView;
     private View mLoginFormView;
     private UserLoginTask mAuthTask;
@@ -37,21 +43,11 @@ public class UserLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        txtFieldAadhaar = (AutoCompleteTextView) findViewById(R.id.txtfieldAdhar);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
-                    return true;
-                }
-                return false;
-            }
-        });
+        txtFieldName = (EditText) findViewById(R.id.txtfieldName);
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.btnUserLogin);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,31 +67,27 @@ public class UserLoginActivity extends AppCompatActivity {
     private void attemptLogin() {
 
         // Reset errors.
-        mEmailView.setError(null);
-        mPasswordView.setError(null);
+        txtFieldAadhaar.setError(null);
+        txtFieldName.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        String email = txtFieldAadhaar.getText().toString();
+        String password = txtFieldName.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
+        if (!TextUtils.isEmpty(password)) {
+            txtFieldName.setError("Enter Name");
+            focusView = txtFieldName;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
+            txtFieldAadhaar.setError(getString(R.string.error_field_required));
+            focusView = txtFieldAadhaar;
             cancel = true;
         }
 
@@ -110,16 +102,6 @@ public class UserLoginActivity extends AppCompatActivity {
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
-    }
-
-    private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
-    }
-
-    private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
     }
 
     /**
@@ -162,41 +144,40 @@ public class UserLoginActivity extends AppCompatActivity {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserLoginTask extends AsyncTask<Void, Void, UserModel> {
 
-        private final String mEmail;
-        private final String mPassword;
+        private final String aadhaar;
+        private final String name;
 
         UserLoginTask(String email, String password) {
-            mEmail = email;
-            mPassword = password;
+            aadhaar = email;
+            name = password;
         }
 
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected UserModel doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
 
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
+            WebServices webServices = new WebServices(UserLoginActivity.this);
+
+            UserModel success = webServices.loginUser(aadhaar, name);
 
             // TODO: register the new account here.
-            return true;
+            return success;
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(final UserModel userModel) {
             mAuthTask = null;
             showProgress(false);
 
-            if (success) {
+            if (userModel != null) {
+                Utilities.saveUserInfo(userModel);
+                Intent userHome = new Intent(UserLoginActivity.this, HomeActivity.class);
+                startActivity(userHome);
                 finish();
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+                Toast.makeText(UserLoginActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
         }
 

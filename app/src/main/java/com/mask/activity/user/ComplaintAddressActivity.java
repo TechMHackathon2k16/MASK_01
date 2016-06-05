@@ -3,6 +3,8 @@ package com.mask.activity.user;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.mask.R;
+
 public class ComplaintAddressActivity extends AppCompatActivity {
 
     @Override
