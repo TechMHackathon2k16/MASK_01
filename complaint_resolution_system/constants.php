@@ -1,6 +1,8 @@
 <?php
 	define("success", "success");
 	define("user", "user");
+	define("complaints", "complaints");
+	define("complaints_resolve_date", "resolve_date");
 
 	define("new_complaint", 001);
 	define("assigned_complaint", 101);
@@ -18,4 +20,5 @@
 	define("new_status", "status");
 	define("date", "date");
 	define("contact", "contact");
+	define("status","status");
 ?>

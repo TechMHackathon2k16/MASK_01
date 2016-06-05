@@ -14,11 +14,11 @@
 		}
 
 		public function getComplaint(){
+																		//0->pending, //1->completed
+			$result = $this->model->getUserComplanint($_POST[user_id], $_POST[status]);						
 
-			$result = $this->model->getUserComplanint($_POST[user_id], $_POST[contact]);						
-
-			if($result === true)
-				$final_result = array(success => 1 );
+			if($result != null)
+				$final_result = array(success => 1 , complaints => $result); //return complaints based on 
 			else 
 				$final_result = array(success => 0 );
 
