@@ -20,20 +20,23 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New RadioButton"
-            android:id="@+id/radioButton" />
+            android:text="Electricity problem"
+            android:id="@+id/rbtnElect"
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New RadioButton"
-            android:id="@+id/radioButton2" />
+            android:text="Water problem"
+            android:id="@+id/rbtnWater"
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="47dp"
-            android:text="New RadioButton"
-            android:id="@+id/radioButton3" />
+            android:text="plumber required"
+            android:id="@+id/rbtnPlumber"
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
